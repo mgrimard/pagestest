@@ -1,11 +1,53 @@
 media: media
 content:
-  - name: posts
-    label: Posts
+  - name: news
+    label: News Articles
     type: collection
-    path: content/posts
+    path: src/content/news
+    filename: "{year}-{month}-{day}-{fields.slug}.md"
     fields:
       - name: title
+        label: Title
         type: string
+        required: true
+      - name: slug
+        label: URL Slug
+        type: string
+        required: true
+      - name: publishDate
+        label: Publish Date
+        type: date
+        required: true
+      - name: author
+        label: Author
+        type: string
+      - name: summary
+        label: Summary
+        type: text
+      - name: featuredImage
+        label: Featured Image
+        type: image
+      - name: category
+        label: Category
+        type: select
+        options:
+          - News
+          - Outages
+          - Water
+          - Electricity
+          - Corporate
+          - Community
+      - name: tags
+        label: Tags
+        type: list
+      - name: featured
+        label: Featured Article
+        type: boolean
+        default: false
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
       - name: body
+        label: Article Content
         type: rich-text
