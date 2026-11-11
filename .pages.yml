@@ -1,11 +1,40 @@
 media: media
+
 content:
-  - name: posts
-    label: Posts
+  - name: news
+    label: News Articles
     type: collection
-    path: content/posts
+    path: content/news
+
     fields:
       - name: title
+        label: Title
         type: string
+
+      - name: slug
+        label: Slug
+        type: string
+
+      - name: publishDate
+        label: Publish Date
+        type: date
+
+      - name: summary
+        label: Summary
+        type: text
+
+      - name: featuredImage
+        label: Featured Image
+        type: image
+
+      - name: category
+        label: Category
+        type: string
+
+      - name: featured
+        label: Featured
+        type: boolean
+
       - name: body
+        label: Article Content
         type: rich-text
